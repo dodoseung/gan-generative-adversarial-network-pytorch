@@ -1,0 +1,32 @@
+# Data parameters
+data:
+  seed: 777
+  data_path: '~/.pytorch/CITYSCAPES_data/'
+  batch_size: 6
+  shuffle: True
+  drop_last: True
+  download: True
+  num_workers: 4
+  img_size: [572, 572]
+  # img_size: [1024, 2048]
+
+# Model parameters
+model:
+  input_dim: 3
+  num_class: 35
+
+# Training parameters
+train:
+  epochs: 300
+  lr: 0.001
+  betas: [0.9, 0.999]
+  eps: 0.00000001
+  weight_decay: 0.01
+
+# Save
+save:
+  model_name: 'cityscapes'
+
+# Other parameters
+others:
+  log_period: 100
