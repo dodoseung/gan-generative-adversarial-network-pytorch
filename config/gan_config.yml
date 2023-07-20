@@ -1,19 +1,31 @@
 # Data parameters
 data:
   seed: 777
-  data_path: '~/.pytorch/CITYSCAPES_data/'
-  batch_size: 6
+  data_path: '~/.pytorch/EMNIST_data/'
+  download: True
+  batch_size: 1024
   shuffle: True
   drop_last: True
   download: True
   num_workers: 4
-  img_size: [572, 572]
-  # img_size: [1024, 2048]
+  img_size: [28, 28]
 
 # Model parameters
 model:
-  input_dim: 3
-  num_class: 35
+  gen_latent_z : 100
+  gen_init_layer : [7,7,64]
+  gen_conv_trans : [2,2,1,1]
+  gen_conv_filters : [128,64,64,1]
+  gen_conv_kernels : [5,5,5,5]
+  gen_conv_strides : [1,1,1,1]
+  gen_conv_pads : [2,2,2,2]
+  gen_dropout_rate : 0.1
+  dis_input_img : [28,28,1]
+  dis_conv_filters : [64,64,128,128]
+  dis_conv_kernels : [5,5,5,5]
+  dis_conv_strides : [2,2,2,1]
+  dis_conv_pads : [2,2,2,2]
+  dis_dropout_rate : 0.4
 
 # Training parameters
 train:
@@ -25,8 +37,8 @@ train:
 
 # Save
 save:
-  model_name: 'cityscapes'
+  model_name: 'emnist'
 
 # Other parameters
 others:
-  log_period: 100
+  log_period: 10
