@@ -29,7 +29,7 @@ model:
 
 # Training parameters
 train:
-  epochs: 300
+  epochs: 100
   lr: 0.001
   betas: [0.9, 0.999]
   eps: 0.00000001
